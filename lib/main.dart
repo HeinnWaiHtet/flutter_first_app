@@ -123,6 +123,21 @@ class MyApp extends StatelessWidget{
               icon: const Icon(Icons.phone_android),
               iconSize: 40, ),
 
+          DropdownButton(
+            iconSize: 40,
+            icon: const Icon(Icons.laptop),
+            dropdownColor: Colors.yellowAccent,
+            onChanged: (val){
+              // ignore: avoid_print
+              print(val);
+            },
+            hint: const Text("Select your Laptop"),
+            items: ["MacBook","Hp","Asus"].map(
+              (val) => DropdownMenuItem(child: Text(val),value: val,)
+              ).toList(),
+            ),
+          
+
           ],
         ),
        ),
