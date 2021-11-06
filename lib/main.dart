@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget{
             "Flutter",
             style: TextStyle(color: Colors.amber[400]),),
             ),
-          body: Row(
+          body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               // ignore: avoid_unnecessary_containers
@@ -42,45 +42,82 @@ class MyApp extends StatelessWidget{
                 ),
 
                 // ignore: sized_box_for_whitespace
-                Container(
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    style: BorderStyle.solid,
+                    color: Colors.blueAccent,
+                    width: 2)
+                    ),
+                margin: const EdgeInsets.all(10),
+                height: 100,
+                width: 100,
+                child: const Text(
+                  "Second",
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 19,
+                    fontStyle: FontStyle.italic),
+                    ),
+                    ),
+                    
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    style: BorderStyle.solid,
+                    color: Colors.redAccent,
+                    width: 2)
+                    ),
+                    margin: const EdgeInsets.all(10),
+                    height: 100,
+                    width: 100,
+                    child: const Text(
+                      "Third",
+                      style: TextStyle(
+                        color: Colors.redAccent,
+                        fontSize: 19,
+                        fontStyle: FontStyle.italic),
+                        ),
+                        ),
+                              
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    style: BorderStyle.solid,
+                    color: Colors.blue,
+                    width: 2)
+                    ),
+                    margin: const EdgeInsets.all(10),
+                    height: 100,
+                    width: 100,
+                    child: const Text(
+                      "Fourth",
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontSize: 19,
+                        fontStyle: FontStyle.italic),
+                        ),
+                        ),
+                                        
+              Container(
                   decoration: BoxDecoration(
                     border: Border.all(
                       style: BorderStyle.solid,
-                      color: Colors.blueAccent,
+                      color: Colors.greenAccent,
                       width: 2)
                       ),
-                  margin: const EdgeInsets.all(10),
-                  height: 100,
-                  width: 100,
-                  child: const Text(
-                    "Second",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 19,
-                      fontStyle: FontStyle.italic),
-                      ),
-                     ),
-                     
-                     Container(
-                       decoration: BoxDecoration(
-                         border: Border.all(
-                           style: BorderStyle.solid,
-                           color: Colors.redAccent,
-                           width: 2)
-                           ),
-                           margin: const EdgeInsets.all(10),
-                           height: 100,
-                           width: 100,
-                           child: const Text(
-                             "Third",
-                             style: TextStyle(
-                               color: Colors.redAccent,
-                               fontSize: 19,
-                               fontStyle: FontStyle.italic),
-                               ),
-                               ),
-
-            ],
+                      margin: const EdgeInsets.all(10),
+                      height: 100,
+                      width: 100,
+                      child: const Text(
+                        "Fifth",
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 19,
+                          fontStyle: FontStyle.italic),
+                          ),
+                          ),
+                          ],
             ),
         ),
     );
