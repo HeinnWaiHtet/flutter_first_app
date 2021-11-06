@@ -74,10 +74,58 @@ class MyApp extends StatelessWidget{
                       wordSpacing: 2,
                     ),
                   ),
-                     ),
-              ],
-            ),
-      ),
+                ),
+
+              FloatingActionButton(
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
+                onPressed: (){},
+                child: const Text("Click"),
+                ),
+
+              FloatingActionButton.extended(
+                icon: const Icon(Icons.phone,color: Colors.greenAccent,),
+                onPressed: (){},
+                 label: const Text(
+                   "Click",
+                   style: TextStyle(
+                     color: Colors.white,
+                     fontSize: 21,
+                     fontStyle: FontStyle.italic
+                   ),
+                   ),
+                   ),
+
+              IconButton(
+                onPressed: (){},
+                icon: const Icon(Icons.volume_down),
+                iconSize: 40,
+                color: Colors.yellow,
+                tooltip: "Volume",),
+
+              PopupMenuButton(itemBuilder: (context){
+                return [
+                  const PopupMenuItem(
+                    child: Text("Apple"),
+                    value: 1,),
+                  const PopupMenuItem(
+                    child: Text("SamSumg"),
+                    value: 2,),
+                  const PopupMenuItem(
+                    child: Text("Xiomi"),
+                    value: 3,),
+                ];
+              },
+              onSelected: (value){
+                // ignore: avoid_print
+                print(value);
+              },
+              icon: const Icon(Icons.phone_android),
+              iconSize: 40, ),
+
+          ],
+        ),
+       ),
       ),
     );
   }
