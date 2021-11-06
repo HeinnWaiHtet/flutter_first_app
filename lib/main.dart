@@ -19,32 +19,69 @@ class MyApp extends StatelessWidget{
             "Flutter",
             style: TextStyle(color: Colors.amber[400]),),
             ),
-          body: Container(
-            decoration: BoxDecoration(
-              border:  Border.all(
-                color: Colors.amberAccent,
-                style: BorderStyle.solid,
-                width: 4)
-                ),
-            padding: const EdgeInsets.all(20),
-            margin: const EdgeInsets.only(top: 30,left: 20),
-            width: 200,
-            height: 200,
-            child: const Center(
-              child: Text("Hello Flutter",style: TextStyle(
-                color: Colors.green,
-                letterSpacing: 1,
-                fontSize: 19,
-                shadows: [
-                  Shadow(
-                    color: Colors.black38,
-                    offset: Offset(12,12),
-                    blurRadius: 6.5
+          body: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              // ignore: avoid_unnecessary_containers
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    style: BorderStyle.solid,
+                    color: Colors.green,
+                    width: 2,)
                   ),
-                ] ),
+                margin: const EdgeInsets.all(10),
+                width: 100,
+                height: 100,
+                child: const Text("First",
+                style: TextStyle(
+                  color: Colors.green,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
                 ),
+                ),
+
+                // ignore: sized_box_for_whitespace
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      style: BorderStyle.solid,
+                      color: Colors.blueAccent,
+                      width: 2)
+                      ),
+                  margin: const EdgeInsets.all(10),
+                  height: 100,
+                  width: 100,
+                  child: const Text(
+                    "Second",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 19,
+                      fontStyle: FontStyle.italic),
+                      ),
+                     ),
+                     
+                     Container(
+                       decoration: BoxDecoration(
+                         border: Border.all(
+                           style: BorderStyle.solid,
+                           color: Colors.redAccent,
+                           width: 2)
+                           ),
+                           margin: const EdgeInsets.all(10),
+                           height: 100,
+                           width: 100,
+                           child: const Text(
+                             "Third",
+                             style: TextStyle(
+                               color: Colors.redAccent,
+                               fontSize: 19,
+                               fontStyle: FontStyle.italic),
+                               ),
+                               ),
+
+            ],
             ),
-          ),
         ),
     );
   }
