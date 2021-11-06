@@ -74,7 +74,25 @@ class MyApp extends StatelessWidget{
                       wordSpacing: 2,
                     ),
                   ),
-                     ),
+                ),
+
+              FloatingActionButton(
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
+                onPressed: (){},
+                child: const Text("Click"),
+                ),
+
+              FloatingActionButton.extended(
+                icon: const Icon(Icons.phone,color: Colors.greenAccent,),
+                onPressed: (){},
+                 label: const Text(
+                   "Click",
+                   style: TextStyle(
+                     color: Colors.white,
+                     fontSize: 21,
+                     fontStyle: FontStyle.italic
+                   ),))
               ],
             ),
       ),
