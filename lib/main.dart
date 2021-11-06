@@ -55,6 +55,26 @@ class MyApp extends StatelessWidget{
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic)
                   ),),
+
+                ElevatedButton(
+                  onPressed: (){},
+                  child: const Text(
+                     "Elavated Button",),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.greenAccent,
+                    onPrimary: Colors.blueAccent,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15))
+                    ),
+                    textStyle: const TextStyle(
+                      fontSize: 21,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1,
+                      wordSpacing: 2,
+                    ),
+                  ),
+                     ),
               ],
             ),
       ),
