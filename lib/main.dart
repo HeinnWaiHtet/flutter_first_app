@@ -19,207 +19,27 @@ class MyApp extends StatelessWidget{
             "Flutter",
             style: TextStyle(color: Colors.amber[400]),),
             ),
-          body: SingleChildScrollView(
-            child: Center(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              // ignore: avoid_unnecessary_containers
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: Colors.green,
-                    width: 2,)
-                  ),
-                margin: const EdgeInsets.all(10),
-                width: 100,
-                height: 100,
-                child: const Text("First",
-                style: TextStyle(
-                  color: Colors.green,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
-                ),
-                ),
-
-                // ignore: sized_box_for_whitespace
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: Colors.blueAccent,
-                    width: 2)
-                    ),
-                margin: const EdgeInsets.all(10),
-                height: 100,
-                width: 100,
-                child: const Text(
-                  "Second",
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 19,
-                    fontStyle: FontStyle.italic),
-                    ),
-                    ),
-                    
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: Colors.redAccent,
-                    width: 2)
-                    ),
-                    margin: const EdgeInsets.all(10),
-                    height: 100,
-                    width: 100,
-                    child: const Text(
-                      "Third",
-                      style: TextStyle(
-                        color: Colors.redAccent,
-                        fontSize: 19,
-                        fontStyle: FontStyle.italic),
-                        ),
-                        ),
-                              
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: Colors.blue,
-                    width: 2)
-                    ),
-                    margin: const EdgeInsets.all(10),
-                    height: 100,
-                    width: 100,
-                    child: const Text(
-                      "Fourth",
-                      style: TextStyle(
-                        color: Colors.blueAccent,
-                        fontSize: 19,
-                        fontStyle: FontStyle.italic),
-                        ),
-                        ),
-                                        
-              Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      style: BorderStyle.solid,
-                      color: Colors.greenAccent,
-                      width: 2)
-                      ),
-                      margin: const EdgeInsets.all(10),
-                      height: 100,
-                      width: 100,
-                      child: const Text(
-                        "Fifth",
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 19,
-                          fontStyle: FontStyle.italic),
-                          ),
-                        ),
-
-                        // ignore: avoid_unnecessary_containers
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: Colors.blueGrey,
-                    width: 2,)
-                  ),
-                margin: const EdgeInsets.all(10),
-                width: 100,
-                height: 100,
-                child: const Text("Sixth",
-                style: TextStyle(
-                  color: Colors.green,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
-                ),
-                ),
-
-                // ignore: sized_box_for_whitespace
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: Colors.pinkAccent,
-                    width: 2)
-                    ),
-                margin: const EdgeInsets.all(10),
-                height: 100,
-                width: 100,
-                child: const Text(
-                  "Seventh",
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 19,
-                    fontStyle: FontStyle.italic),
-                    ),
-                    ),
-                    
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: Colors.yellowAccent,
-                    width: 2)
-                    ),
-                    margin: const EdgeInsets.all(10),
-                    height: 100,
-                    width: 100,
-                    child: const Text(
-                      "Eighth",
-                      style: TextStyle(
-                        color: Colors.redAccent,
-                        fontSize: 19,
-                        fontStyle: FontStyle.italic),
-                        ),
-                        ),
-                              
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: Colors.purple,
-                    width: 2)
-                    ),
-                    margin: const EdgeInsets.all(10),
-                    height: 100,
-                    width: 100,
-                    child: const Text(
-                      "Ninth",
-                      style: TextStyle(
-                        color: Colors.blueAccent,
-                        fontSize: 19,
-                        fontStyle: FontStyle.italic),
-                        ),
-                        ),
-                                        
-              Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      style: BorderStyle.solid,
-                      color: Colors.black38,
-                      width: 2)
-                      ),
-                      margin: const EdgeInsets.all(10),
-                      height: 100,
-                      width: 100,
-                      child: const Text(
-                        "Tenth",
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 19,
-                          fontStyle: FontStyle.italic),
-                          ),
-                        ),
-                      ],
+          body: Center(
+            child: TextButton(
+              autofocus: true,
+              child: const Text("TextButton"),
+              onPressed: (){
+              // ignore: avoid_print
+              print('click me');
+            },
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.orangeAccent[200],
+              primary: Colors.white,//For Text Color
+              shape: const BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(2))),
+              textStyle :const TextStyle(
+                color: Colors.white,
+                fontSize: 21,
+                letterSpacing: 2,
             ),
-            ),
-          ),
+          )
         ),
+      ),
+      ),
     );
   }
 }
