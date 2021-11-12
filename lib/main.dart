@@ -35,23 +35,20 @@ class MyAppState extends State<MyApp>{
                 height: 200,
                 ),
 
-              Container(
-                margin: const EdgeInsets.all(20),
-                width: 300,
-                height: 200,
-                child: Image.network(
-                  'https://w0.peakpx.com/wallpaper/32/626/HD-wallpaper-big-hat-pretty-dress-beautiful-sweet-nice-anime-beauty-anime-girl-long-hair-black-hair-female-lovely-gown-hat-girl-lady-scene-maiden.jpg'),
-                  ),
-              
-              Container(
-                width: 300,
-                height: 200,
-                margin: const EdgeInsets.all(20),
-                child: FadeInImage.assetNetwork(
-                  placeholder: 'assets/chit.jpg',
-                  image: 'https://w0.peakpx.com/wallpaper/572/730/HD-wallpaper-anime-girl-black-hair-pretty-anime.jpg'),
-                  ),
-
+               Card(
+                  color: Colors.indigoAccent,
+                  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(25))),
+                  // ignore: avoid_unnecessary_containers
+                  child : Container(
+                    width: 200,
+                    height: 200,
+                    margin: const EdgeInsets.all(20),
+                    child: const Text(
+                      'Card',
+                       style: TextStyle(color: Colors.amberAccent, fontSize: 30),
+                       ),
+                    ),
+                ),
             ],
           ),
         ),
