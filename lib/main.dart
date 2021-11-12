@@ -21,12 +21,11 @@ class MyAppState extends State<MyApp>{
       debugShowCheckedModeBanner: false,
       title: "Flutter State Full Widget",
       home: DefaultTabController(
-        length: 9,
+        length: 3,
         child: Scaffold(
           appBar: AppBar(
             title: const Text('Tab Bar'),
             bottom: const TabBar(
-              isScrollable: true,
               indicatorColor: Colors.pinkAccent,
               indicatorSize: TabBarIndicatorSize.label,
               indicatorWeight: 3,
@@ -34,12 +33,6 @@ class MyAppState extends State<MyApp>{
                 Tab(child: Text('Home'),icon: Icon(Icons.home_filled),),
                 Tab(child: Text('Profile'),icon: Icon(Icons.person_off_outlined),),
                 Tab(child: Text('about'),icon: Icon(Icons.person_pin_sharp),),
-                Tab(child: Text('car'),icon: Icon(Icons.car_rental),),
-                Tab(child: Text('apartment'),icon: Icon(Icons.apartment),),
-                Tab(child: Text('laptop'),icon: Icon(Icons.laptop_mac),),
-                Tab(child: Text('phone'),icon: Icon(Icons.phone_iphone),),
-                Tab(child: Text('garden'),icon: Icon(Icons.grade_rounded),),
-                Tab(child: Text('wife'),icon: Icon(Icons.personal_video),),
               ],
              ),
             ) ,
@@ -55,33 +48,33 @@ class TabView extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return const TabBarView(children: [
+    return TabBarView(children: [
       Center(
-        child: Text('Home', style: TextStyle(color: Colors.redAccent,fontSize: 30),),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Home', style: TextStyle(color: Colors.redAccent,fontSize: 30),),
+            const SizedBox(height: 20,),
+            OutlinedButton(
+              child: const Text('SnackBar'),
+              onPressed: (){
+                SnackBar bar = SnackBar(
+                  content: const Text('Deleted'),
+                  duration: const Duration(seconds: 3),
+                  action: SnackBarAction(label: 'Undo',onPressed: (){},
+                  ),
+                );
+                ScaffoldMessenger.of(context).showSnackBar(bar);
+              },
+            ),
+          ],
+        ),
       ),
-      Center(
+      const Center(
         child: Text('Profile',style: TextStyle(color: Colors.cyanAccent,fontSize: 30),),
       ),
-      Center(
+      const Center(
         child: Text('About',style: TextStyle(color: Colors.blueAccent,fontSize: 30),),
-      ),
-      Center(
-        child: Text('Car', style: TextStyle(color: Colors.redAccent,fontSize: 30),),
-      ),
-      Center(
-        child: Text('Apartment',style: TextStyle(color: Colors.cyanAccent,fontSize: 30),),
-      ),
-      Center(
-        child: Text('Laptop',style: TextStyle(color: Colors.blueAccent,fontSize: 30),),
-      ),
-      Center(
-        child: Text('Phone', style: TextStyle(color: Colors.redAccent,fontSize: 30),),
-      ),
-      Center(
-        child: Text('Garden',style: TextStyle(color: Colors.cyanAccent,fontSize: 30),),
-      ),
-      Center(
-        child: Text('Wife',style: TextStyle(color: Colors.blueAccent,fontSize: 30),),
       ),
     ]);
   }
