@@ -34,26 +34,67 @@ class ListData extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    List laptopList = [
-      'MacBook',
-      'Hp',
-      'Asus ZenBook',
-      'Chrome Book',
-      'MacBook',
-      'Hp',
-      'Asus ZenBook',
-      'Chrome Book',
-      'MacBook',
-      'Hp',
-      'Asus ZenBook',
-      'Chrome Book',
-      'MacBook',
-      'Hp',
-      'Asus ZenBook',
-      'Chrome Book',];
-    return ListView.builder(itemCount: laptopList.length,itemBuilder: (context, index){
-      return ListTile(title: Text('${laptopList[index]}',),leading: const Icon(Icons.laptop_windows),);
-    });
+    return GridView.count(
+      crossAxisCount: 2,
+      mainAxisSpacing: 5,
+      crossAxisSpacing: 3,
+      children: [
+        // ignore: sized_box_for_whitespace
+        Container(
+          width: 100,
+          height : 100,
+          child: const Text('First') ,
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 2,
+              color: Colors.cyan,),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
+          ),
+
+          Container(
+          width: 100,
+          height : 100,
+          child: const Text('Second') ,
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 2,
+              color: Colors.cyan,),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
+          ),
+
+          Container(
+          width: 100,
+          height : 100,
+          child: const Text('Third') ,
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 2,
+              color: Colors.cyan,),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
+          ),
+
+          Container(
+          width: 100,
+          height : 100,
+          child: const Text('Fourth') ,
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 2,
+              color: Colors.cyan,),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
+          ),
+
+          Container(
+          width: 100,
+          height : 100,
+          child: const Text('Fifth') ,
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 2,
+              color: Colors.cyan,),
+            borderRadius: const BorderRadius.all(Radius.circular(15))),
+          ),
+      ],);
   }
 }
 
