@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
 class MyApp extends StatefulWidget{
   const MyApp({Key? key}) : super(key: key);
 
@@ -15,7 +11,10 @@ class MyApp extends StatefulWidget{
 }
 
 class MyAppState extends State<MyApp>{
-  int navBarIndex = 0;
+  bool checkStatus = true;
+  bool anotherCheckStatus = false;
+  String radioGroup = 'hein';
+  double sliderVal = 21;
   bool switchState = true;
   @override
   // ignore: avoid_renaming_method_parameters
@@ -28,7 +27,29 @@ class MyAppState extends State<MyApp>{
           title: const Text('CheckBox'),),
           body: Column(
             children: [
-              
+              const LinearProgressIndicator(
+                minHeight: 3,
+                color: Colors.blue,
+                backgroundColor: Colors.redAccent,
+                valueColor: AlwaysStoppedAnimation(Colors.yellow),
+                ),
+
+              const CircularProgressIndicator(
+                strokeWidth: 5,
+                backgroundColor: Colors.pink,
+                valueColor: AlwaysStoppedAnimation(Colors.blueGrey),
+              ),
+
+              Slider(
+                min: 0,
+                max: 100,
+                value: sliderVal,
+                onChanged: (value){
+                  setState(() {
+                    sliderVal = value;
+                  });
+                },),
+
               CarouselSlider(
                 items: [
                   Image.asset('assets/c.jpg'),
@@ -52,31 +73,60 @@ class MyAppState extends State<MyApp>{
                     switchState = status;
                   });
               }),
+
+              Checkbox(
+                checkColor: Colors.pinkAccent,
+                activeColor: Colors.yellow,
+                value: checkStatus,
+                onChanged: (status){
+                setState(() {
+                  checkStatus = status!;
+                });
+              }),
+
+              const SizedBox(height:30),
+
+              CheckboxListTile(
+                title: const Text('Alarm'),
+                subtitle: const Text('Wake up'),
+                secondary: const Icon(Icons.alarm),
+                value: anotherCheckStatus,
+                onChanged: (status){
+                setState(() {
+                  anotherCheckStatus = status!;
+                });
+              }),
+
+              const SizedBox(height: 20,),
+
+              Radio(
+                value: 'hein',
+                groupValue: radioGroup,
+                onChanged: (String? status){
+                setState(() {
+                  radioGroup = status!;
+                });
+              }),
+
+              Radio(
+                value: 'wai',
+                groupValue: radioGroup,
+                onChanged: (String? status){
+                setState(() {
+                  radioGroup = status!;
+                });
+              }),
+
+              Radio(
+                value: 'htet',
+                groupValue: radioGroup,
+                onChanged: (String? status){
+                setState(() {
+                  radioGroup = status!;
+                });
+              }),
             ],
           ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: navBarIndex,
-          selectedFontSize: 15,
-          elevation: 2.0,
-          onTap: (status){
-            setState(() {
-              navBarIndex = status;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-              backgroundColor: Colors.green,
-              activeIcon: Icon(Icons.home_filled)
-              ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_off_outlined),
-              label: 'Profile',
-              activeIcon: Icon(Icons.person)
-            )
-          ],
-        ),
       ),
     );
   }
