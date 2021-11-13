@@ -34,25 +34,26 @@ class ListData extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return ListView(
-      children: const [
-        ListTile(title: Text('MacBook'),leading: Icon(Icons.laptop_mac_sharp),focusColor: Colors.green,),
-        ListTile(title: Text('ZenBook'),leading: Icon(Icons.laptop_mac_sharp),hoverColor: Colors.red,),
-        ListTile(title: Text('Hp'),leading: Icon(Icons.laptop_mac_sharp)),
-        ListTile(title: Text('MacBook'),leading: Icon(Icons.laptop_mac_sharp),focusColor: Colors.green,),
-        ListTile(title: Text('ZenBook'),leading: Icon(Icons.laptop_mac_sharp),hoverColor: Colors.red,),
-        ListTile(title: Text('Hp'),leading: Icon(Icons.laptop_mac_sharp)),
-        ListTile(title: Text('MacBook'),leading: Icon(Icons.laptop_mac_sharp),focusColor: Colors.green,),
-        ListTile(title: Text('ZenBook'),leading: Icon(Icons.laptop_mac_sharp),hoverColor: Colors.red,),
-        ListTile(title: Text('Hp'),leading: Icon(Icons.laptop_mac_sharp)),
-        ListTile(title: Text('MacBook'),leading: Icon(Icons.laptop_mac_sharp),focusColor: Colors.green,),
-        ListTile(title: Text('ZenBook'),leading: Icon(Icons.laptop_mac_sharp),hoverColor: Colors.red,),
-        ListTile(title: Text('Hp'),leading: Icon(Icons.laptop_mac_sharp)),
-        ListTile(title: Text('MacBook'),leading: Icon(Icons.laptop_mac_sharp),focusColor: Colors.green,),
-        ListTile(title: Text('ZenBook'),leading: Icon(Icons.laptop_mac_sharp),hoverColor: Colors.red,),
-        ListTile(title: Text('Hp'),leading: Icon(Icons.laptop_mac_sharp)),
-      ],
-    );
+    List laptopList = [
+      'MacBook',
+      'Hp',
+      'Asus ZenBook',
+      'Chrome Book',
+      'MacBook',
+      'Hp',
+      'Asus ZenBook',
+      'Chrome Book',
+      'MacBook',
+      'Hp',
+      'Asus ZenBook',
+      'Chrome Book',
+      'MacBook',
+      'Hp',
+      'Asus ZenBook',
+      'Chrome Book',];
+    return ListView.builder(itemCount: laptopList.length,itemBuilder: (context, index){
+      return ListTile(title: Text('${laptopList[index]}',),leading: const Icon(Icons.laptop_windows),);
+    });
   }
 }
 
