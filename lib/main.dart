@@ -31,70 +31,48 @@ class MyAppState extends State<MyApp>{
 
 class ListData extends StatelessWidget{
   const ListData({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context){
-    return GridView.count(
-      crossAxisCount: 2,
-      mainAxisSpacing: 5,
-      crossAxisSpacing: 3,
-      children: [
-        // ignore: sized_box_for_whitespace
-        Container(
-          width: 100,
-          height : 100,
-          child: const Text('First') ,
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 2,
-              color: Colors.cyan,),
-            borderRadius: const BorderRadius.all(Radius.circular(15))),
-          ),
+    List laptopList = [
+      'MacBook',
+      'Hp',
+      'Asus ZenBook',
+      'Chrome Book',
+      'MacBook',
+      'Hp',
+      'Asus ZenBook',
+      'Chrome Book',
+      'MacBook',
+      'Hp',
+      'Asus ZenBook',
+      'Chrome Book',
+      'MacBook',
+      'Hp',
+      'Asus ZenBook',];
 
-          Container(
+    return GridView.builder(
+      itemCount: laptopList.length,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 3,
+        mainAxisSpacing: 3,),
+      itemBuilder: (context, index){
+        return Container(
           width: 100,
-          height : 100,
-          child: const Text('Second') ,
+          height: 100,
           decoration: BoxDecoration(
-            border: Border.all(
-              width: 2,
-              color: Colors.cyan,),
-            borderRadius: const BorderRadius.all(Radius.circular(15))),
-          ),
-
-          Container(
-          width: 100,
-          height : 100,
-          child: const Text('Third') ,
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 2,
-              color: Colors.cyan,),
-            borderRadius: const BorderRadius.all(Radius.circular(15))),
-          ),
-
-          Container(
-          width: 100,
-          height : 100,
-          child: const Text('Fourth') ,
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 2,
-              color: Colors.cyan,),
-            borderRadius: const BorderRadius.all(Radius.circular(15))),
-          ),
-
-          Container(
-          width: 100,
-          height : 100,
-          child: const Text('Fifth') ,
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 2,
-              color: Colors.cyan,),
-            borderRadius: const BorderRadius.all(Radius.circular(15))),
-          ),
-      ],);
+            border: Border.all(width: 2,color: Colors.redAccent,),
+            borderRadius: const BorderRadius.all(Radius.circular(15)),
+            ),
+          child: Text(
+            "${laptopList[index]}",
+            style: const TextStyle(
+              color: Colors.orangeAccent,
+              fontWeight: FontWeight.normal,
+              fontSize: 21),
+              ),
+        );
+      });
   }
 }
 
