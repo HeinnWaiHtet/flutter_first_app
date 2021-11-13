@@ -28,6 +28,18 @@ class MyAppState extends State<MyApp>{
           title: const Text('CheckBox'),),
           body: Column(
             children: [
+              const LinearProgressIndicator(
+                minHeight: 3,
+                color: Colors.blue,
+                backgroundColor: Colors.redAccent,
+                valueColor: AlwaysStoppedAnimation(Colors.yellow),
+                ),
+
+              const CircularProgressIndicator(
+                strokeWidth: 5,
+                backgroundColor: Colors.pink,
+                valueColor: AlwaysStoppedAnimation(Colors.blueGrey),
+              ),
               Checkbox(
                 checkColor: Colors.pinkAccent,
                 activeColor: Colors.yellow,
@@ -78,14 +90,6 @@ class MyAppState extends State<MyApp>{
                 setState(() {
                   radioGroup = status!;
                 });
-              }),
-
-              RadioListTile(
-                title: const Text('Hello'),
-                value: true,
-                groupValue: 'gg',
-                onChanged: (Object? status){
-
               }),
             ],
           ),
