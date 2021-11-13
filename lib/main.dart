@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'second_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +20,13 @@ class MyAppState extends State<MyApp>{
   bool switchState = true;
   @override
   // ignore: avoid_renaming_method_parameters
-  Widget build(BuildContext buildContext){
+  Widget build(BuildContext context){
     return MaterialApp(
+      routes: {
+        '/second_page' : (context){
+          return const SecondPage();
+        }
+      },
       debugShowCheckedModeBanner: false,
       title: "Flutter State Full Widget",
       home: Scaffold(
@@ -94,9 +100,20 @@ class MyAppState extends State<MyApp>{
                   DataCell(Text('21')),
                   DataCell(Text('Yangon')),
                 ]),
-              ])
+              ]),
+
+              Builder(builder: (context)=> OutlinedButton(
+                child: const Text('Go To Second'),
+                onPressed: (){
+                  // Navigator.pushNamed(context, '/second_page');
+                  Navigator.push(context, MaterialPageRoute(builder: (content){
+                    return const SecondPage();
+                  }));
+                },)
+              ),
             ],
           ),
+
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: navBarIndex,
           selectedFontSize: 15,
