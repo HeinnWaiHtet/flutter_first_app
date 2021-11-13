@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
 class MyApp extends StatefulWidget{
   const MyApp({Key? key}) : super(key: key);
 
@@ -31,6 +26,7 @@ class MyAppState extends State<MyApp>{
 
 class ListData extends StatelessWidget{
   const ListData({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context){
     List laptopList = [
@@ -48,31 +44,11 @@ class ListData extends StatelessWidget{
       'Chrome Book',
       'MacBook',
       'Hp',
-      'Asus ZenBook',];
-
-    return GridView.builder(
-      itemCount: laptopList.length,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 3,
-        mainAxisSpacing: 3,),
-      itemBuilder: (context, index){
-        return Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            border: Border.all(width: 2,color: Colors.redAccent,),
-            borderRadius: const BorderRadius.all(Radius.circular(15)),
-            ),
-          child: Text(
-            "${laptopList[index]}",
-            style: const TextStyle(
-              color: Colors.orangeAccent,
-              fontWeight: FontWeight.normal,
-              fontSize: 21),
-              ),
-        );
-      });
+      'Asus ZenBook',
+      'Chrome Book',];
+    return ListView.builder(itemCount: laptopList.length,itemBuilder: (context, index){
+      return ListTile(title: Text('${laptopList[index]}',),leading: const Icon(Icons.laptop_windows),);
+    });
   }
 }
 
