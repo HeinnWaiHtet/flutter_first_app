@@ -10,8 +10,30 @@ class SecondPage extends StatelessWidget {
         backgroundColor: Colors.indigoAccent,
         ),
       body: Center(
-        child: Column(
+        child: Row(
           children: [
+            // ignore: avoid_unnecessary_containers
+            Container(
+              child: const Text('First'),
+              width: 100,
+              height: 100,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/chit.jpg'),
+                  fit: BoxFit.cover),
+                ),
+              ),
+
+            Expanded(
+              // ignore: avoid_unnecessary_containers
+              child: Container(
+                child: const Text('Expanded'),
+                color: Colors.grey,
+                width: 100,
+                height: 100,
+                ),
+              ),
+
             const Text('Second Page'),
             
             ElevatedButton(
