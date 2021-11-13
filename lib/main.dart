@@ -14,6 +14,8 @@ class MyApp extends StatefulWidget{
 }
 
 class MyAppState extends State<MyApp>{
+  bool checkStatus = true;
+  bool anotherCheckStatus = false;
   @override
   // ignore: avoid_renaming_method_parameters
   Widget build(BuildContext buildContext){
@@ -22,8 +24,34 @@ class MyAppState extends State<MyApp>{
       title: "Flutter State Full Widget",
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('List View'),),
-          body: const ListData(),
+          title: const Text('CheckBox'),),
+          body: Column(
+            children: [
+              Checkbox(
+                checkColor: Colors.pinkAccent,
+                activeColor: Colors.yellow,
+                value: checkStatus,
+                onChanged: (status){
+                setState(() {
+                  checkStatus = status!;
+                });
+              }),
+
+              const SizedBox(height:30),
+
+              CheckboxListTile(
+                title: const Text('Alarm'),
+                subtitle: const Text('Wake up'),
+                secondary: const Icon(Icons.alarm),
+                value: anotherCheckStatus,
+                onChanged: (status){
+                setState(() {
+                  anotherCheckStatus = status!;
+                });
+              }),
+
+            ],
+          ),
       ),
     );
   }
