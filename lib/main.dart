@@ -19,6 +19,7 @@ class MyAppState extends State<MyApp>{
   bool anotherCheckStatus = false;
   String radioGroup = 'hein';
   double sliderVal = 21;
+  bool switchState = true;
   @override
   // ignore: avoid_renaming_method_parameters
   Widget build(BuildContext buildContext){
@@ -62,7 +63,20 @@ class MyAppState extends State<MyApp>{
                   autoPlay: true,
                   autoPlayAnimationDuration: const Duration(milliseconds: 500),
                   scrollDirection: Axis.horizontal,
-                )),
+                )
+              ),
+
+              Switch(
+                activeColor: Colors.blueGrey,
+                activeTrackColor: Colors.deepOrangeAccent,
+                inactiveThumbColor: Colors.limeAccent,
+                inactiveTrackColor: Colors.lightBlueAccent,
+                value: switchState,
+                onChanged: (status){
+                  setState(() {
+                    switchState = status;
+                  });
+              }),
 
               Checkbox(
                 checkColor: Colors.pinkAccent,
