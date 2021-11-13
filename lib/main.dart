@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,7 @@ class MyAppState extends State<MyApp>{
   bool checkStatus = true;
   bool anotherCheckStatus = false;
   String radioGroup = 'hein';
+  double sliderVal = 21;
   @override
   // ignore: avoid_renaming_method_parameters
   Widget build(BuildContext buildContext){
@@ -40,6 +42,28 @@ class MyAppState extends State<MyApp>{
                 backgroundColor: Colors.pink,
                 valueColor: AlwaysStoppedAnimation(Colors.blueGrey),
               ),
+
+              Slider(
+                min: 0,
+                max: 100,
+                value: sliderVal,
+                onChanged: (value){
+                  setState(() {
+                    sliderVal = value;
+                  });
+                },),
+
+              CarouselSlider(
+                items: [
+                  Image.asset('assets/c.jpg'),
+                  Image.asset('assets/chit.jpg'),
+                ],
+                options: CarouselOptions(
+                  autoPlay: true,
+                  autoPlayAnimationDuration: const Duration(milliseconds: 500),
+                  scrollDirection: Axis.horizontal,
+                )),
+
               Checkbox(
                 checkColor: Colors.pinkAccent,
                 activeColor: Colors.yellow,

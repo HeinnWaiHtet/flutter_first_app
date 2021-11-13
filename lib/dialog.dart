@@ -54,7 +54,7 @@ class MyHome extends StatelessWidget{
                 ],
               );
             });
-            data.then((value) => print(value));
+            data.then((value) => {});
           }, child: const Text('show option Dialog'))
         ],
       ),
