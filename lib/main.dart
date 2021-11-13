@@ -52,6 +52,49 @@ class MyAppState extends State<MyApp>{
                     switchState = status;
                   });
               }),
+
+              Table(
+                border: TableBorder.all(width: 1,),
+                defaultColumnWidth: const FlexColumnWidth(30),
+                defaultVerticalAlignment: TableCellVerticalAlignment.bottom,
+                children: const [
+                  TableRow(
+                    children: [
+                      TableCell(child: Text('mg mg')),
+                      TableCell(child: Text('1')),
+                      TableCell(child: Text('Monywa')),
+                    ]
+                  ),
+                  TableRow(
+                    children: [
+                      TableCell(child: Text('mg mg')),
+                      TableCell(child: Text('1')),
+                      TableCell(child: Text('Monywa')),
+                    ]
+                  ),
+                ],
+              ),
+
+              DataTable(
+                showBottomBorder: true,
+                columnSpacing: 50.0,
+                columns: const [
+                DataColumn(label: Text('Name')),
+                DataColumn(label: Text('Age')),
+                DataColumn(label: Text('Birth')),
+              ],
+              rows: const [
+                DataRow(cells: [
+                  DataCell(Text('mg mg')),
+                  DataCell(Text('21')),
+                  DataCell(Text('Monywa')),
+                ]),
+                DataRow(cells: [
+                  DataCell(Text('Aung Aung')),
+                  DataCell(Text('21')),
+                  DataCell(Text('Yangon')),
+                ]),
+              ])
             ],
           ),
         bottomNavigationBar: BottomNavigationBar(
