@@ -37,6 +37,20 @@ class MyAppState extends State<MyApp>{
              ),
             ) ,
             body: const TabView(),
+            drawer: Drawer(
+              child: Column(
+                children: const [
+                  UserAccountsDrawerHeader(
+                    accountName: Text('chanmay@gmail.com'),
+                    accountEmail: Text('chanmay@gmail.com'),
+                    currentAccountPicture: CircleAvatar(
+                      backgroundImage: AssetImage('assets/chit.jpg'),
+                      child: Text('chit'),
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ),
         ),
     );
@@ -71,7 +85,7 @@ class TabView extends StatelessWidget{
         ),
       ),
       const Center(
-        child: Text('Profile',style: TextStyle(color: Colors.cyanAccent,fontSize: 30),),
+        child: Text('User Profile',style: TextStyle(color: Colors.cyanAccent,fontSize: 30),),
       ),
       const Center(
         child: Text('About',style: TextStyle(color: Colors.blueAccent,fontSize: 30),),
