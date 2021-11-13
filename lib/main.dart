@@ -16,6 +16,7 @@ class MyApp extends StatefulWidget{
 class MyAppState extends State<MyApp>{
   bool checkStatus = true;
   bool anotherCheckStatus = false;
+  String radioGroup = 'hein';
   @override
   // ignore: avoid_renaming_method_parameters
   Widget build(BuildContext buildContext){
@@ -50,6 +51,42 @@ class MyAppState extends State<MyApp>{
                 });
               }),
 
+              const SizedBox(height: 20,),
+
+              Radio(
+                value: 'hein',
+                groupValue: radioGroup,
+                onChanged: (String? status){
+                setState(() {
+                  radioGroup = status!;
+                });
+              }),
+
+              Radio(
+                value: 'wai',
+                groupValue: radioGroup,
+                onChanged: (String? status){
+                setState(() {
+                  radioGroup = status!;
+                });
+              }),
+
+              Radio(
+                value: 'htet',
+                groupValue: radioGroup,
+                onChanged: (String? status){
+                setState(() {
+                  radioGroup = status!;
+                });
+              }),
+
+              RadioListTile(
+                title: const Text('Hello'),
+                value: true,
+                groupValue: 'gg',
+                onChanged: (Object? status){
+
+              }),
             ],
           ),
       ),
