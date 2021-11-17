@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'second_page.dart';
-import 'futurebuilder_widget.dart';
+import 'streambuilder_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -108,7 +108,7 @@ class MyAppState extends State<MyApp>{
                 onPressed: (){
                   // Navigator.pushNamed(context, '/second_page');
                   Navigator.push(context, MaterialPageRoute(builder: (content){
-                    return const FutureBuilderWidget();
+                    return const StreamBuilderWidget();
                   }));
                 },)
               ),
